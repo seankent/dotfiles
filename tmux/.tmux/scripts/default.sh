@@ -5,5 +5,5 @@ ROOT="~"
 
 WINDOW="main"
 INIT="./init_default_main.sh"
-source "./create_session.sh"
+source ~/.tmux/scripts/create_session.sh
 
