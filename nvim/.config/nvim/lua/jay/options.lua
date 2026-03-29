@@ -14,6 +14,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 -- Copy indent from current line when starting a new line
 vim.opt.autoindent = true
+-- Don't auto-indent based on syntax, just preserve current indentation level
+vim.opt.smartindent = false
 
 
 -- Highlight matches while typing a search
@@ -39,6 +41,14 @@ vim.opt.guicursor = ""
 vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         vim.opt.formatoptions:remove({ "r", "o" })
+    end,
+})
+
+-- Disable built-in indent functions, use plain autoindent instead
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "verilog", "systemverilog", "c", "cpp", "python" },
+    callback = function()
+        vim.bo.indentexpr = ""
     end,
 })
 

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 SESSION="default"
-ROOT="~"
+ROOT=~
 
 WINDOW="main"
-INIT="./init_default_main.sh"
+INIT=~/.tmux/scripts/init.sh
 source ~/.tmux/scripts/create_session.sh
 
