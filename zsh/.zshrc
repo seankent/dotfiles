@@ -1,4 +1,7 @@
 
+#PS1="%F{green}❯%f "
+PS1="%F{green}[%c] ❯%f "
+
 # Don't record a command that was just run
 setopt HIST_IGNORE_DUPS
 # Remove older duplicate entries from history
