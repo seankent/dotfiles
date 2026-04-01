@@ -1,5 +1,19 @@
 
 
+#if [ -n "$ZSH_VERSION" ]; then
+#    PS1="%F{green}❯%f "
+#fi
+#
+#if [ -n "$BASH_VERSION" ]; then
+#    PS1="\[\e[32m\]❯\[\e[0m\] "
+#fi
+
+if [ -n "$ZSH_VERSION" ]; then
+    PS1="%F{green}[%c] ❯%f "
+elif [ -n "$BASH_VERSION" ]; then
+    PS1="\[\e[32m\][\W] ❯\[\e[0m\] "
+fi
+
 alias ll="ls -la"
 alias py3="python3"
 
